@@ -1,0 +1,5 @@
+{
+  "NODE_ENV": "development",
+  "INTEGRATION_PATH": "https://gxliivh0rl.execute-api.ap-south-1.amazonaws.com/dev/integrationService/events",
+  "X_API_KEY": "0cHPPsfdsfB8l234lkfsdlfdsSYfjksd6Qd41tYh"
+}

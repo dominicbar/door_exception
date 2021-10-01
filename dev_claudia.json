@@ -1,0 +1,12 @@
+{
+  "lambda": {
+    "role": "lambda_executioner_role",
+    "name": "door_exception",
+    "region": "ap-south-1",
+    "sharedRole": true
+  },
+  "api": {
+    "id": "cu0gbz0jc6",
+    "module": "app"
+  }
+}

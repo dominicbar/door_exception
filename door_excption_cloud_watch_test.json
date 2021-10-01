@@ -1,0 +1,8 @@
+{
+  "lambda": {
+    "role": "lambda_executioner_role",
+    "name": "door_excption_cloud_watch_test",
+    "region": "ap-south-1",
+    "sharedRole": true
+  }
+}

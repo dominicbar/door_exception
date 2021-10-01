@@ -1,0 +1,30 @@
+claudia create --name door_excption_cloud_watch --handler doorExceptionCloudWatch.handler --region ap-south-1 --role lambda_executioner_role --config door_excption_cloud_watch.json --profile claudia 
+
+claudia update --name door_excption_cloud_watch --handler doorExceptionCloudWatch.handler --region ap-south-1 --role lambda_executioner_role --config door_excption_cloud_watch.json --profile claudia --set-env NODE_ENV=development
+
+
+claudia test-lambda claudia --handler doorExceptionCloudWatch.handler --region ap-south-1 --config door_excption_cloud_watch.json --profile claudia
+
+claudia update  --region ap-south-1 --role lambda_executioner_role --config claudia.json --profile dev_claudia.json  --set-env NODE_ENV=development 
+
+
+
+
+//testc
+claudia create --name door_excption_cloud_watch --handler doorExceptionCloudWatch.handler --region ap-south-1 --role lambda_executioner_role --config door_excption_cloud_watch.json --profile claudia 
+
+claudia create --name door_excption_cloud_watch_test --handler doorExceptionCloudWatch.handler --region ap-south-1 --role lambda_executioner_role --config door_excption_cloud_watch_test.json --profile claudia --set-env-from-json test_env.json
+
+claudia create --name door_excption_cloud_watch_prod --handler doorExceptionCloudWatch.handler --region ap-south-1 --role lambda_executioner_role --config door_excption_cloud_watch_prod.json --profile claudia --set-env-from-json prod_env.json
+
+
+claudia update --name door_excption_cloud_watch --handler doorExceptionCloudWatch.handler --region ap-south-1 --role lambda_executioner_role --config door_excption_cloud_watch.json --profile claudia  --set-env-from-json dev_env.json
+ 
+
+claudia update --name DoorExceptionv2-test --region ap-south-1 --api-module app --role lambda_executioner_role --config test_claudia.json --profile claudia --no-optional-dependencies --version test --set-env-from-json test_env.json
+
+claudia create --name DoorExceptionv2-prod --region ap-south-1 --api-module app --role lambda_executioner_role --config prod_claudia.json --profile claudia --no-optional-dependencies --version prod --set-env-from-json prod_env.json
+
+
+
+NODE_ENV=development node_modules/.bin/sequelize db:migrate
